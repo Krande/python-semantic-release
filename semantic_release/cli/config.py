@@ -134,7 +134,7 @@ class RemoteConfig(BaseModel):
     ignore_token_for_push: bool = False
     insecure: bool = True
 
-    @field_validator("url", "domain", "api_domain", "token", mode="before")
+    @field_validator("token", mode="before")
     @classmethod
     def resolve_env_vars(cls, val: Any) -> str | None:
         ret_val = (
