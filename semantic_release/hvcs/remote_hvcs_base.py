@@ -160,8 +160,8 @@ class RemoteHvcsBase(HvcsBase, metaclass=ABCMeta):
 
     @staticmethod
     def _validate_url_scheme(url: Url, allow_insecure: bool = False) -> None:
-        if url.scheme == "http" and not allow_insecure:
-            raise ValueError("Insecure connections are currently disabled.")
+        # if url.scheme == "http" and not allow_insecure:
+        #     raise ValueError("Insecure connections are currently disabled.")
 
         if url.scheme not in ["http", "https"]:
             raise ValueError(
