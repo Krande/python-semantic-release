@@ -132,7 +132,7 @@ class RemoteConfig(BaseModel):
     domain: Optional[str] = None
     api_domain: Optional[str] = None
     ignore_token_for_push: bool = False
-    insecure: bool = False
+    insecure: bool = True
 
     @field_validator("url", "domain", "api_domain", "token", mode="before")
     @classmethod
